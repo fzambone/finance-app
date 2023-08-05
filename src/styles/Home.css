@@ -1,0 +1,20 @@
+.main-content {
+    padding: 2em;
+    text-align: center;
+}
+
+.main-content .cta {
+    margin-top: 2em;
+    display: inline-block;
+    padding: 1em 2em;
+    background-color: #64f8aa;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: background-color 0.2s;
+}
+
+.main-content .cta:hover {
+    background-color: #53D89B;
+}
