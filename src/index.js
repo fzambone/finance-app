@@ -4,6 +4,7 @@ import './index.css';
 import Router from './routes/Router';
 import reportWebVitals from './reportWebVitals';
 import './styles/global.css';
+import 'font-awesome/css/font-awesome.min.css';
 
 const root = document.getElementById('root');
 const rootContainer = createRoot(root);

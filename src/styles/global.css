@@ -20,3 +20,23 @@ nav ul li {
     display: inline;
     margin-right: 10px;
 }
+
+.cta {
+    margin-top: 2em;
+    display: inline-block;
+    padding: 1em 2em;
+    background-color: #53D89B;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    border: none;
+}
+
+.cta:hover {
+    background-color: #2D8C9A;
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}

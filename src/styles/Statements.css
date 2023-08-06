@@ -1,18 +1,3 @@
 .statements {
     padding: 2em;
 }
-
-.statements table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.statements th, .statements td {
-    border: 1px solid #ddd;
-    padding: 0.5em;
-}
-
-.statements th {
-    background-color: #64F8AA;
-    color: #fff;
-}
