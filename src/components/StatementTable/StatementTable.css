@@ -1,14 +1,36 @@
 table {
     border-collapse: collapse;
+    border: none;
     width: 100%;
 }
 
 th, td {
-    border: 1px solid #ddd;
-    padding: 0.5em;
+    padding: 10px;
 }
 
 th {
     background-color: #53D89B;
     color: #fff;
+}
+
+th:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+th:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+tr {
+    border-bottom: 1px solid #ccc;
+}
+
+tr:last-child {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
 }

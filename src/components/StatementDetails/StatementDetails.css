@@ -1,0 +1,13 @@
+.statement-details {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.statement-details h2, .statement-details h3 {
+    color: #333;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+}

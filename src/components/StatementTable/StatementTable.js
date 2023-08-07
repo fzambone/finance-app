@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { mockData} from '../../data/mockData';
 import './StatementTable.css';
 import ActionsMenu from '../Menus/ActionsMenu';
+import Modal from '../Modal/Modal';
+import StatementDetails from '../StatementDetails/StatementDetails';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const tableHeaders = ['Bank Name', 'Upload Date', 'Statement Start Date', 'Statement End Date', 'Total Transactions', 
 'Total Income', 'Total Expenses', 'Actions'];
 
 
 const StatementTable = () => {
+
+    const [isModalOpen, setModalOpen] = useState(false);
+    const [currentStatementId, setCurrentStatementId] = useState(null);
+    const [ loading, setLoading ] = useState(false);
     
     const tableRows = mockData && mockData.length ? mockData.map(statement => (
         <tr key={statement.id}>
@@ -22,7 +29,16 @@ const StatementTable = () => {
                 <ActionsMenu actions={[
                     {
                         label: 'View Details',
-                        callback: () => console.log(`Viewing details of statement ${statement.id}`)
+                        callback: () => {
+                            setLoading(true);
+
+                            //Simulating a data fetch with timeout, need to replace this later
+                            setTimeout(() => {                                
+                                setCurrentStatementId(statement.id);
+                                setModalOpen(true);
+                                setLoading(false);
+                            }, 1000);
+                        }
                     },
                     {
                         label: 'Delete',
@@ -35,6 +51,7 @@ const StatementTable = () => {
 
     return (
         <div className='statements'>
+            {loading && <LoadingSpinner />}
             <table>
                 <thead>
                     <tr>
@@ -47,6 +64,12 @@ const StatementTable = () => {
                     {tableRows}
                 </tbody>
             </table>
+            {
+                isModalOpen &&
+                <Modal isVisible={isModalOpen} onClose={() => setModalOpen(false)}>
+                    <StatementDetails statementId={currentStatementId} />
+                </Modal>
+            }
         </div>
     );
 };
